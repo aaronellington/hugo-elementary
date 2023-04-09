@@ -16,3 +16,6 @@ A Hugo theme.
 
 ## Supported [Menus](https://gohugo.io/content-management/menus/#define-in-site-configuration)
 - main
+
+## TODO:
+- disable breadcrumb on homepage
