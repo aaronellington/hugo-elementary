@@ -1,0 +1,19 @@
+<title>{{ .Site.Title }}</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+
+{{ $style := resources.Get "./_elementary.css" }}
+{{ $customStyle := resources.Get "./elementary.css" }}
+{{ if ne $customStyle nil }}
+	{{ $style = slice $style $customStyle | resources.Concat "_elementary.css" }}
+{{ end }}
+{{ $styleFingerprinted := $style | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
+
+{{ $script := resources.Get "./_elementary.js" }}
+{{ $customScript := resources.Get "./elementary.js" }}
+{{ if ne $customScript nil }}
+	{{ $script = slice $script $customScript | resources.Concat "_elementary.js" }}
+{{ end }}
+{{ $scriptFingerprinted := $script | resources.Fingerprint }}
+<script src="{{ $scriptFingerprinted.Permalink }}" integrity="{{ $scriptFingerprinted.Data.Integrity }}"></script>

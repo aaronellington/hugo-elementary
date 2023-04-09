@@ -1,0 +1,177 @@
+@mixin setColorTheme($theme) {
+	// Background/Foreground
+	--kpds-color-background-primary: var(--kpds-src-color-#{$theme}-background-primary);
+	--kpds-color-background-secondary: var(--kpds-src-color-#{$theme}-background-secondary);
+	--kpds-color-background-tertiary: var(--kpds-src-color-#{$theme}-background-tertiary);
+	--kpds-color-foreground-primary: var(--kpds-src-color-#{$theme}-foreground-primary);
+	--kpds-color-foreground-secondary: var(--kpds-src-color-#{$theme}-foreground-secondary);
+	--kpds-color-foreground-tertiary: var(--kpds-src-color-#{$theme}-foreground-tertiary);
+
+	// Accent
+	--kpds-color-accent-primary: var(--kpds-src-color-#{$theme}-accent-primary);
+	--kpds-color-accent-secondary: var(--kpds-src-color-#{$theme}-accent-secondary);
+	--kpds-color-accent-tertiary: var(--kpds-src-color-#{$theme}-accent-tertiary);
+
+	// Levels
+	--kpds-color-success-primary: var(--kpds-src-color-#{$theme}-success-primary);
+	--kpds-color-success-secondary: var(--kpds-src-color-#{$theme}-success-secondary);
+	--kpds-color-success-tertiary: var(--kpds-src-color-#{$theme}-success-tertiary);
+	--kpds-color-warning-primary: var(--kpds-src-color-#{$theme}-warning-primary);
+	--kpds-color-warning-secondary: var(--kpds-src-color-#{$theme}-warning-secondary);
+	--kpds-color-warning-tertiary: var(--kpds-src-color-#{$theme}-warning-tertiary);
+	--kpds-color-danger-primary: var(--kpds-src-color-#{$theme}-danger-primary);
+	--kpds-color-danger-secondary: var(--kpds-src-color-#{$theme}-danger-secondary);
+	--kpds-color-danger-tertiary: var(--kpds-src-color-#{$theme}-danger-tertiary);
+}
+
+:root {
+	// Background/Foreground
+	--kpds-src-color-dark-background-primary: #111111;
+	--kpds-src-color-dark-background-secondary: #333333;
+	--kpds-src-color-dark-background-tertiary: #555555;
+	--kpds-src-color-dark-foreground-primary: #fff;
+	--kpds-src-color-dark-foreground-secondary: #cccccc;
+	--kpds-src-color-dark-foreground-tertiary: #aaaaaa;
+
+	// Accent
+	--kpds-src-color-dark-accent-primary: #0db9f3;
+	--kpds-src-color-dark-accent-secondary: #277a94;
+	--kpds-src-color-dark-accent-tertiary: #8bcfee;
+
+	// Levels
+	--kpds-src-color-dark-success-primary: #37d90f;
+	--kpds-src-color-dark-success-secondary: #239a06;
+	--kpds-src-color-dark-success-tertiary: #b9ecad;
+	--kpds-src-color-dark-warning-primary: #ffdd00;
+	--kpds-src-color-dark-warning-secondary: #9e8900;
+	--kpds-src-color-dark-warning-tertiary: #fffadc;
+	--kpds-src-color-dark-danger-primary: #ff0000;
+	--kpds-src-color-dark-danger-secondary: #ab1a1a;
+	--kpds-src-color-dark-danger-tertiary: #f3a6a6;
+
+	// Background/Foreground
+	--kpds-src-color-light-background-primary: #fff;
+	--kpds-src-color-light-background-secondary: #cccccc;
+	--kpds-src-color-light-background-tertiary: #aaaaaa;
+	--kpds-src-color-light-foreground-primary: #000000;
+	--kpds-src-color-light-foreground-secondary: #222222;
+	--kpds-src-color-light-foreground-tertiary: #444444;
+
+	// Accent
+	--kpds-src-color-light-accent-primary: #0d5df3;
+	--kpds-src-color-light-accent-secondary: #0840a6;
+	--kpds-src-color-light-accent-tertiary: #8baeee;
+
+	// Levels
+	--kpds-src-color-light-success-primary: #37d90f;
+	--kpds-src-color-light-success-secondary: #239a06;
+	--kpds-src-color-light-success-tertiary: #b9ecad;
+	--kpds-src-color-light-warning-primary: #ffdd00;
+	--kpds-src-color-light-warning-secondary: #9e8900;
+	--kpds-src-color-light-warning-tertiary: #fffadc;
+	--kpds-src-color-light-danger-primary: #ff0000;
+	--kpds-src-color-light-danger-secondary: #ab1a1a;
+	--kpds-src-color-light-danger-tertiary: #f3a6a6;
+}
+
+html {
+	@include setColorTheme('dark');
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not(.disable-dark-mode) {
+		@include setColorTheme('dark');
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html:not(.disable-light-mode) {
+		@include setColorTheme('light');
+	}
+}
+
+html.disable-dark-mode:not(.disable-dark-mode) {
+	@include setColorTheme('light');
+}
+
+:root {
+	// Typography
+	--kpds-src-base-text-size: 12pt;
+	--kpds-src-base-font-family: sans-serif;
+	--kpds-src-title-font-family: sans-serif;
+
+	// Border Radius
+	--kpds-src-border-radius-sm: 2px;
+	--kpds-src-border-radius-md: 4px;
+	--kpds-src-border-radius-lg: 8px;
+
+	// Borders
+	--kpds-border-primary: 1px solid var(--kpds-color-foreground-secondary);
+	--kpds-border-secondary: 1px solid var(--kpds-color-foreground-tertiary);
+	--kpds-border-tertiary: 1px solid var(--kpds-color-background-secondary);
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	color: var(--kpds-color-foreground-primary);
+	background-color: var(--kpds-color-background-primary);
+	font-size: var(--kpds-base-text-size);
+	font-family: var(--kpds-src-base-font-family);
+
+	a {
+		color: var(--kpds-color-accent-primary);
+		text-decoration: none;
+	}
+}
+
+nav {
+	ul {
+		list-style-type: none;
+	}
+}
+
+article {
+	> *:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--kpds-title-font-family);
+	}
+
+	p {
+		line-height: 1.6rem;
+		display: block;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	ul,
+	ol {
+		padding-left: 2rem;
+
+		li {
+			line-height: 1.6rem;
+		}
+	}
+}
+
+form {
+	label {
+		display: block;
+	}
+}

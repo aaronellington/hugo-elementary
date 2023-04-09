@@ -1,0 +1,43 @@
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- define "partials/inline/menu-walk.html" }}
+	{{- $page := .page }}
+	{{- range .menuEntries }}
+		{{- $attrs := dict "href" .URL }}
+		{{- if $page.IsMenuCurrent .Menu . }}
+			{{- $attrs = merge $attrs (dict "class" "active") }}
+		{{- else if $page.HasMenuCurrent .Menu .}}
+			{{- $attrs = merge $attrs (dict "class" "ancestor") }}
+		{{- end }}
+
+		{{ if strings.HasPrefix .URL "http" }}
+			{{- $attrs = merge $attrs (dict "target" "_blank") }}
+			{{- $attrs = merge $attrs (dict "rel" "noopener") }}
+		{{ end }}
+		<li>
+			<a
+				{{- range $k, $v := $attrs }}
+					{{- with $v }}
+						{{- printf " %s=%q" $k $v | safeHTMLAttr }}
+					{{- end }}
+				{{- end -}}
+			>
+				{{ or (T .Identifier) .Name | safeHTML }}
+			</a>
+			{{- with .Children }}
+				<ul>
+					{{- partial "inline/menu-walk.html" (dict "page" $page "menuEntries" .) }}
+				</ul>
+			{{- end }}
+		</li>
+	{{- end }}
+{{- end }}
+
+{{- with index site.Menus $menuID }}
+	<nav>
+		<ul>
+			{{- partial "inline/menu-walk.html" (dict "page" $page "menuEntries" .) }}
+		</ul>
+	</nav>
+{{- end }}

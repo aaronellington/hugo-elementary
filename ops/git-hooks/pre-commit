@@ -1,0 +1,6 @@
+#!/bin/sh
+
+npm install
+rm assets/_elementary.*
+npm run build
+git add assets/_elementary.*

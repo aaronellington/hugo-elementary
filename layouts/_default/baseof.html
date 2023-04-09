@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{{ $htmlClassList := "" }}
+
+{{ $disableDarkMode := .Site.Params.disableDarkMode | default false }}
+{{ if $disableDarkMode }}
+	{{ $htmlClassList = printf "%s disable-dark-mode" $htmlClassList }}
+{{ end }}
+
+{{ $disableLightMode := .Site.Params.disableLightMode | default false }}
+{{ if $disableLightMode }}
+	{{ $htmlClassList = printf "%s disable-light-mode" $htmlClassList }}
+{{ end }}
+
+<html class="{{ $htmlClassList}}">
+	{{- partial "head.html" . -}}
+	<body>
+		{{- partial "header.html" . -}}
+		{{- block "main" . }}{{- end }}
+		{{- partial "footer.html" . -}}
+	</body>
+</html>

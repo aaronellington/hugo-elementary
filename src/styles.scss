@@ -1,0 +1,53 @@
+@import url('./prism.scss');
+
+.elementary-list {
+	.elementary-list-item {
+		padding: 1rem;
+	}
+}
+
+.elementary-container {
+	max-width: 768px;
+	margin: auto;
+}
+
+#elementary-header {
+	.elementary-container {
+		text-align: center;
+		h1 {
+			padding: 1rem;
+			padding-bottom: 0;
+		}
+		nav {
+			ul {
+				&:after {
+					clear: both;
+					content: '';
+					display: block;
+				}
+				li {
+					display: inline-block;
+					a {
+						display: block;
+						padding: 1rem;
+					}
+				}
+			}
+		}
+
+		border-bottom: var(--kpds-border-tertiary);
+	}
+}
+#elementary-body {
+	.elementary-container {
+		padding: 16px;
+	}
+}
+
+#elementary-footer {
+	.elementary-container {
+		padding: 16px;
+		text-align: center;
+		border-top: var(--kpds-border-tertiary);
+	}
+}

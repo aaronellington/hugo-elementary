@@ -1,0 +1,6 @@
+baseURL: https://example.com
+languageCode: en-us
+title: Elementary Example
+theme: hugo-elementary
+disableKinds:
+  - term

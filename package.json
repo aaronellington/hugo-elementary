@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"targets": {
+		"app": {
+			"source": "src/_elementary.ts",
+			"distDir": "./assets",
+			"sourceMap": false
+		}
+	},
+	"scripts": {
+		"build": "parcel build --no-cache",
+		"watch": "parcel watch --no-hmr --no-cache"
+	},
+	"dependencies": {
+		"@kyberbits/prism": "^1.0.3"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.8.3",
+		"parcel": "^2.8.3"
+	}
+}

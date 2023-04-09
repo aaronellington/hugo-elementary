@@ -1,0 +1,13 @@
+{{ if and (.Pages) (ne .Params.disableList true)  }}
+	{{ $paginator := .Paginate (.Pages) }}
+	<div class="elementary-list">
+		{{ range $paginator.Pages }}
+			<div class="elementary-list-item">
+				<a href="{{ .Permalink }}">
+					{{ .Title }}
+				</a>
+			</div>
+		{{ end }}
+	</div>
+	{{- template "_internal/pagination.html" . -}}
+{{ end }}
