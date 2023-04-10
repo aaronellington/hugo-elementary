@@ -1,5 +1,55 @@
 @import url('./prism.scss');
 
+#elementary-breadcrumbs {
+	ul {
+		&:after {
+			content: '';
+			clear: both;
+			display: block;
+		}
+		li {
+			float: left;
+
+			&:not(:last-child):after {
+				content: '>';
+				padding: 0rem 0.5rem;
+			}
+		}
+	}
+}
+
+#elementary-docs-menu {
+	border: 1px solid grey;
+
+	ul {
+		&:not(:first-child) {
+			margin-left: 1rem;
+		}
+
+		li {
+			a {
+				border-bottom: 1px solid grey;
+				display: block;
+				padding: 1rem;
+			}
+		}
+
+		ul {
+			li {
+				&:last-child {
+					a {
+						border-bottom: none;
+					}
+				}
+			}
+
+			a {
+				border-left: 1px solid grey;
+			}
+		}
+	}
+}
+
 .elementary-list {
 	.elementary-list-item {
 		padding: 1rem;
@@ -38,9 +88,40 @@
 		border-bottom: var(--kpds-border-tertiary);
 	}
 }
+
+ul.pagination {
+	display: flex;
+	list-style: none;
+	gap: 1rem;
+	justify-content: center;
+	li {
+		padding: 0.5rem;
+	}
+}
+
 #elementary-body {
 	.elementary-container {
 		padding: 16px;
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		#elementary-breadcrumbs {
+			flex: 1 0 100%;
+		}
+
+		#elementary-docs-menu {
+			flex: 0 0 256px;
+		}
+
+		#elementary-article {
+			flex-grow: 1;
+
+			#elementary-list {
+				margin-top: 1rem;
+			}
+		}
 	}
 }
 
