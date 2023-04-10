@@ -66,8 +66,8 @@
 		text-align: center;
 		h1 {
 			padding: 1rem;
-			padding-bottom: 0;
 		}
+
 		nav {
 			ul {
 				&:after {
@@ -75,11 +75,13 @@
 					content: '';
 					display: block;
 				}
+
 				li {
 					display: inline-block;
 					a {
 						display: block;
 						padding: 1rem;
+						padding-top: 0;
 					}
 				}
 			}
