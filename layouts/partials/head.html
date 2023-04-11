@@ -1,6 +1,10 @@
 <title>{{ .Site.Title }}</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1">
 
+{{ $appleTouchIcon := resources.Get "./apple-touch-icon.png" }}
+{{ $appleTouchIconFingerprinted := $appleTouchIcon | resources.Fingerprint }}
+<link rel="apple-touch-icon" href="{{ $appleTouchIconFingerprinted.Permalink }}">
+
 
 {{ $style := resources.Get "./_elementary.css" }}
 {{ $customStyle := resources.Get "./elementary.css" }}

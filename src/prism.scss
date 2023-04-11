@@ -1,8 +1,10 @@
 @mixin setColorTheme($theme) {
 	// Background/Foreground
+	--kpds-color-background-accent: var(--kpds-src-color-#{$theme}-background-accent);
 	--kpds-color-background-primary: var(--kpds-src-color-#{$theme}-background-primary);
 	--kpds-color-background-secondary: var(--kpds-src-color-#{$theme}-background-secondary);
 	--kpds-color-background-tertiary: var(--kpds-src-color-#{$theme}-background-tertiary);
+	--kpds-color-foreground-accent: var(--kpds-src-color-#{$theme}-foreground-accent);
 	--kpds-color-foreground-primary: var(--kpds-src-color-#{$theme}-foreground-primary);
 	--kpds-color-foreground-secondary: var(--kpds-src-color-#{$theme}-foreground-secondary);
 	--kpds-color-foreground-tertiary: var(--kpds-src-color-#{$theme}-foreground-tertiary);
@@ -26,9 +28,11 @@
 
 :root {
 	// Background/Foreground
+	--kpds-src-color-dark-background-accent: #111111;
 	--kpds-src-color-dark-background-primary: #111111;
 	--kpds-src-color-dark-background-secondary: #333333;
 	--kpds-src-color-dark-background-tertiary: #555555;
+	--kpds-src-color-dark-foreground-accent: #fff;
 	--kpds-src-color-dark-foreground-primary: #fff;
 	--kpds-src-color-dark-foreground-secondary: #cccccc;
 	--kpds-src-color-dark-foreground-tertiary: #aaaaaa;
@@ -50,9 +54,11 @@
 	--kpds-src-color-dark-danger-tertiary: #f3a6a6;
 
 	// Background/Foreground
+	--kpds-src-color-light-background-accent: #fff;
 	--kpds-src-color-light-background-primary: #fff;
 	--kpds-src-color-light-background-secondary: #cccccc;
 	--kpds-src-color-light-background-tertiary: #aaaaaa;
+	--kpds-src-color-light-foreground-accent: #000000;
 	--kpds-src-color-light-foreground-primary: #000000;
 	--kpds-src-color-light-foreground-secondary: #222222;
 	--kpds-src-color-light-foreground-tertiary: #444444;
@@ -129,6 +135,9 @@ body {
 	a {
 		color: var(--kpds-color-accent-primary);
 		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

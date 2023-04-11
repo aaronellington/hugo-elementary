@@ -4,6 +4,8 @@ A Hugo theme.
 ## Customizing
 - assets/elementary.js
 - assets/elementary.css
+- assets/branding.png
+- assets/apple-touch-icon.png
 - static/favicon.ico
 
 ## Site Level [Configuration](https://gohugo.io/getting-started/configuration/#example-configuration)
@@ -16,6 +18,3 @@ A Hugo theme.
 
 ## Supported [Menus](https://gohugo.io/content-management/menus/#define-in-site-configuration)
 - main
-
-## TODO:
-- disable breadcrumb on homepage
