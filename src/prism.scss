@@ -96,7 +96,7 @@ html {
 	}
 }
 
-html.disable-dark-mode:not(.disable-dark-mode) {
+html.disable-dark-mode:not(.disable-light-mode) {
 	@include setColorTheme('light');
 }
 
