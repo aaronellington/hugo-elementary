@@ -186,6 +186,10 @@ article {
 			border: 1px solid var(--kpds-color-foreground-tertiary);
 		}
 
+		th {
+			font-family: var(--kpds-src-title-font-family);
+		}
+
 		td,
 		th {
 			padding: 0.5rem;
