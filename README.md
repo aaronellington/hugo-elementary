@@ -11,6 +11,7 @@ A Hugo theme.
 ## Site Level [Configuration](https://gohugo.io/getting-started/configuration/#example-configuration)
 - params.disableDarkMode <boolean>
 - params.disableLightMode <boolean>
+- params.disclaimer <string>
 
 ## Page Level Configuration:
 - documentation <boolean>

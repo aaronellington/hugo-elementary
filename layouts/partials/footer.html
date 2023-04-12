@@ -1,5 +1,12 @@
 <div id="elementary-footer">
 	<div class="elementary-container">
-		© {{ .Site.Title }} - All Rights Reserved
+		{{ if .Site.Params.disclaimer }}
+			<p>
+				{{ .Site.Params.disclaimer }} ©
+			</p>
+		{{ end }}
+		<p>
+			{{ .Site.Title }} ©
+		</p>
 	</div>
 </div>
