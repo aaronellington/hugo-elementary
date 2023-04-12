@@ -38,10 +38,11 @@ ul.pagination {
 
 #elementary-header {
 	--image-height: 5rem;
-	--banner-height: 3rem;
+	--banner-height: 5rem;
 	height: calc(var(--banner-height) + calc(var(--image-height) / 2));
 	#elementary-banner {
-		background-color: var(--kpds-color-accent-primary);
+		background: url('/banner-tile.png'), var(--kpds-color-accent-primary);
+		background-size: contain;
 		height: var(--banner-height);
 
 		#elementary-banner-title {

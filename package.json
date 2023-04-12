@@ -7,6 +7,9 @@
 			"sourceMap": false
 		}
 	},
+	"parcelIgnore": [
+		".*.png"
+	],
 	"scripts": {
 		"build": "parcel build --no-cache",
 		"watch": "parcel watch --no-hmr --no-cache"
@@ -16,6 +19,7 @@
 	},
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.8.3",
-		"parcel": "^2.8.3"
+		"parcel": "^2.8.3",
+		"parcel-resolver-ignore": "^2.1.3"
 	}
 }
