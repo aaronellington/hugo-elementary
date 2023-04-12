@@ -49,7 +49,7 @@ ul.pagination {
 			display: block;
 			line-height: var(--banner-height);
 			margin-left: calc(var(--image-height) + 1rem);
-			font-weight: bold;
+			font-weight: var(--kpds-src-title-font-weight);
 			color: var(--kpds-color-foreground-accent);
 			font-size: 1.5rem;
 			font-family: var(--kpds-src-title-font-family);
