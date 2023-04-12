@@ -11,7 +11,7 @@
 	{{ $htmlClassList = printf "%s disable-light-mode" $htmlClassList }}
 {{ end }}
 
-<html class="{{ $htmlClassList}}">
+<html lang="{{ site.LanguageCode }}" class="{{ $htmlClassList}}">
 	{{- partial "head.html" . -}}
 	<body>
 		{{- partial "header.html" . -}}
