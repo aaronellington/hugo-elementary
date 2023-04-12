@@ -13,7 +13,8 @@
 {{ $style := resources.Get "./_elementary.css" }}
 {{ $customStyle := resources.Get "./elementary.css" }}
 {{ if ne $customStyle nil }}
-	{{ $style = slice $style $customStyle | resources.Concat "_elementary.css" }}
+	{{ $customStyleF := $customStyle | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $customStyleF.Permalink }}" integrity="{{ $customStyleF.Data.Integrity }}">
 {{ end }}
 {{ $styleFingerprinted := $style | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
