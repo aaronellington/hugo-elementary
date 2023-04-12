@@ -60,6 +60,7 @@ ul.pagination {
 			top: calc(var(--banner-height) - calc(var(--image-height) / 2));
 			border-radius: 100%;
 			border: 0.5rem solid var(--kpds-color-background-primary);
+			background: var(--kpds-color-background-primary);
 			height: var(--image-height);
 			width: var(--image-height);
 			img {
