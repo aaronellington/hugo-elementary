@@ -166,5 +166,13 @@ ul.pagination {
 		padding: 16px;
 		text-align: center;
 		border-top: var(--kpds-border-tertiary);
+		p {
+			opacity: 0.5;
+			font-size: 0.75rem;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
 	}
 }

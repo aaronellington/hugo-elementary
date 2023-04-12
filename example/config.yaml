@@ -4,3 +4,5 @@ title: Elementary Example
 theme: hugo-elementary
 disableKinds:
   - term
+params:
+  disclaimer: foo
