@@ -30,12 +30,12 @@
 	// Background/Foreground
 	--kpds-src-color-dark-background-accent: #111111;
 	--kpds-src-color-dark-background-primary: #111111;
-	--kpds-src-color-dark-background-secondary: #333333;
-	--kpds-src-color-dark-background-tertiary: #555555;
+	--kpds-src-color-dark-background-secondary: #222222;
+	--kpds-src-color-dark-background-tertiary: #333333;
 	--kpds-src-color-dark-foreground-accent: #fff;
 	--kpds-src-color-dark-foreground-primary: #fff;
-	--kpds-src-color-dark-foreground-secondary: #cccccc;
-	--kpds-src-color-dark-foreground-tertiary: #aaaaaa;
+	--kpds-src-color-dark-foreground-secondary: #eee;
+	--kpds-src-color-dark-foreground-tertiary: #dddd;
 
 	// Accent
 	--kpds-src-color-dark-accent-primary: #0db9f3;
@@ -112,9 +112,9 @@ html.disable-dark-mode:not(.disable-dark-mode) {
 	--kpds-src-border-radius-lg: 8px;
 
 	// Borders
-	--kpds-border-primary: 1px solid var(--kpds-color-foreground-secondary);
+	--kpds-border-primary: 1px solid var(--kpds-color-foreground-primary);
 	--kpds-border-secondary: 1px solid var(--kpds-color-foreground-tertiary);
-	--kpds-border-tertiary: 1px solid var(--kpds-color-background-secondary);
+	--kpds-border-tertiary: 1px solid var(--kpds-color-foreground-tertiary);
 }
 
 *,
