@@ -15,8 +15,8 @@
 
 {{ $customStyle := resources.Get "./elementary.css" }}
 {{ if ne $customStyle nil }}
-	{{ $customStyleFingerPrinted := $customStyle | resources.Fingerprint }}
-	<link rel="stylesheet" href="{{ $customStyleFingerPrinted.Permalink }}" integrity="{{ $customStyleF.Data.Integrity }}">
+	{{ $customStyleFingerprinted := $customStyle | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $customStyleFingerprinted.Permalink }}" integrity="{{ $customStyleFingerprinted.Data.Integrity }}">
 {{ end }}
 
 {{ $script := resources.Get "./_elementary.js" }}
