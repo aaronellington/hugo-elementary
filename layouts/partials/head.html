@@ -9,15 +9,14 @@
 {{ $appleTouchIconFingerprinted := $appleTouchIcon | resources.Fingerprint }}
 <link rel="apple-touch-icon" href="{{ $appleTouchIconFingerprinted.Permalink }}">
 
-
 {{ $style := resources.Get "./_elementary.css" }}
 {{ $styleFingerprinted := $style | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
 
 {{ $customStyle := resources.Get "./elementary.css" }}
 {{ if ne $customStyle nil }}
-	{{ $customStyleF := $customStyle | resources.Fingerprint }}
-	<link rel="stylesheet" href="{{ $customStyleF.Permalink }}" integrity="{{ $customStyleF.Data.Integrity }}">
+	{{ $customStyleFingerPrinted := $customStyle | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $customStyleFingerPrinted.Permalink }}" integrity="{{ $customStyleF.Data.Integrity }}">
 {{ end }}
 
 {{ $script := resources.Get "./_elementary.js" }}
@@ -27,5 +26,3 @@
 {{ end }}
 {{ $scriptFingerprinted := $script | resources.Fingerprint }}
 <script src="{{ $scriptFingerprinted.Permalink }}" integrity="{{ $scriptFingerprinted.Data.Integrity }}"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
