@@ -177,6 +177,33 @@ article {
 			line-height: 1.6rem;
 		}
 	}
+
+	article {
+		// border
+		table,
+		td,
+		th {
+			border: 1px solid var(--kpds-color-foreground-tertiary);
+		}
+
+		// Inside Spacing
+		td,
+		th {
+			padding: 0.5rem;
+		}
+
+		table {
+			min-width: 100%;
+			border-collapse: collapse;
+			text-align: left;
+
+			tbody {
+				tr:nth-child(2n) {
+					background: var(--kpds-color-background-tertiary);
+				}
+			}
+		}
+	}
 }
 
 form {
