@@ -11,13 +11,14 @@
 
 
 {{ $style := resources.Get "./_elementary.css" }}
+{{ $styleFingerprinted := $style | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
+
 {{ $customStyle := resources.Get "./elementary.css" }}
 {{ if ne $customStyle nil }}
 	{{ $customStyleF := $customStyle | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $customStyleF.Permalink }}" integrity="{{ $customStyleF.Data.Integrity }}">
 {{ end }}
-{{ $styleFingerprinted := $style | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
 
 {{ $script := resources.Get "./_elementary.js" }}
 {{ $customScript := resources.Get "./elementary.js" }}
