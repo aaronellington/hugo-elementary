@@ -178,3 +178,15 @@ ul.pagination {
 		}
 	}
 }
+
+.elementary-table-wrapper {
+	display: grid;
+	align-items: start;
+	gap: 1rem;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	@media (min-width: 768px) {
+		& {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+}
