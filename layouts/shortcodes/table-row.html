@@ -1,7 +1,11 @@
 <tr>
     <td>
-        <a href="{{ .Get "href" }}">
+        {{ if .Get "href" }}
+            <a href="{{ .Get "href" }}">
+                {{ .Get "label" }}
+            </a>
+        {{ else }}
             {{ .Get "label" }}
-        </a>
+        {{ end }}
     </td>
 </tr>
