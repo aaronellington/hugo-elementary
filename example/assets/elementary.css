@@ -1,6 +1,5 @@
 :root {
-	--kpds-src-color-light-accent-primary: #ff0099;
-	--kpds-src-color-dark-accent-primary: #ff0099;
-	--kpds-src-color-light-foreground-accent: white;
-	--kpds-src-color-dark-foreground-accent: white;
+	--k-prism-dark-color-accent: magenta;
+	--k-prism-light-color-accent: purple;
+	--k-prism-font-base-family: serif;
 }

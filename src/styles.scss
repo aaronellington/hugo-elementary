@@ -3,7 +3,14 @@
 .elementary-container {
 	max-width: 768px;
 	margin: auto;
-	padding: 0 1rem;
+	padding: 1rem;
+	background-color: var(--k-prism-color-background-secondary);
+	border: 1px solid var(--k-prism-color-foreground-secondary);
+	@media (max-width: 768px) {
+		& {
+			border: none;
+		}
+	}
 }
 
 #elementary-breadcrumbs {
@@ -39,20 +46,28 @@ ul.pagination {
 #elementary-header {
 	--image-height: 5rem;
 	--banner-height: 5rem;
+	.elementary-container {
+		background-color: transparent;
+		border: none;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
 	height: calc(var(--banner-height) + calc(var(--image-height) / 2));
 	#elementary-banner {
-		background: url('/banner-tile.png'), var(--kpds-color-accent-primary);
+		background: url('/banner-tile.png'), var(--k-prism-color-accent);
 		background-size: contain;
 		height: var(--banner-height);
 
 		#elementary-banner-title {
-			display: block;
-			line-height: var(--banner-height);
 			margin-left: calc(var(--image-height) + 1rem);
-			font-weight: var(--kpds-src-title-font-weight);
-			color: var(--kpds-color-foreground-accent);
+			line-height: var(--banner-height);
+			font-weight: var(--k-prism-font-title-weight);
 			font-size: 2rem;
-			font-family: var(--kpds-src-title-font-family);
+			font-family: var(--k-prism-font-title-family);
+			a {
+				color: white;
+			}
 		}
 
 		#elementary-banner-image {
@@ -60,8 +75,8 @@ ul.pagination {
 			position: absolute;
 			top: calc(var(--banner-height) - calc(var(--image-height) / 2));
 			border-radius: 100%;
-			border: 0.5rem solid var(--kpds-color-background-primary);
-			background: var(--kpds-color-background-primary);
+			border: 0.5rem solid var(--k-prism-color-background-primary);
+			background: var(--k-prism-color-background-primary);
 			height: var(--image-height);
 			width: var(--image-height);
 			img {
@@ -101,8 +116,6 @@ ul.pagination {
 #elementary-body {
 	min-height: 50vh;
 	.elementary-container {
-		padding: 16px;
-
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
@@ -132,7 +145,7 @@ ul.pagination {
 }
 
 #elementary-docs-menu {
-	border: 1px solid var(--kpds-border-tertiary);
+	border: 1px solid var(--k-prism-color-foreground-secondary);
 
 	ul {
 		&:not(:first-child) {
@@ -141,7 +154,7 @@ ul.pagination {
 
 		li {
 			a {
-				border-bottom: 1px solid var(--kpds-border-tertiary);
+				border-bottom: 1px solid var(--k-prism-color-foreground-secondary);
 				display: block;
 				padding: 1rem;
 			}
@@ -157,7 +170,7 @@ ul.pagination {
 			}
 
 			a {
-				border-left: 1px solid var(--kpds-border-tertiary);
+				border-left: 1px solid var(--k-prism-color-foreground-secondary);
 			}
 		}
 	}
@@ -165,9 +178,10 @@ ul.pagination {
 
 #elementary-footer {
 	.elementary-container {
-		padding: 16px;
 		text-align: center;
-		border-top: var(--kpds-border-tertiary);
+		border-top: none;
+		border-bottom: 1px solid var(--k-prism-color-foreground-secondary);
+
 		p {
 			opacity: 0.75;
 			font-size: 0.75rem;

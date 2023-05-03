@@ -4,9 +4,11 @@
 <div id="elementary-header">
 	<div id="elementary-banner">
 		<div class="elementary-container">
-			<a id="elementary-banner-title" href="{{ .Site.Home.Permalink }}">
-				{{ .Site.Title }}
-			</a>
+			<h1 id="elementary-banner-title">
+				<a  href="{{ .Site.Home.Permalink }}">
+					{{ .Site.Title }}
+				</a>
+			</h1>
 			<a id="elementary-banner-image" href="{{ .Site.Home.Permalink }}">
 				<img src="{{ $brandingImageFingerprinted.Permalink }}" title="{{ .Site.Title }}">
 			</a>
