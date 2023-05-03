@@ -10,9 +10,11 @@
 
 :root {
 	// Standard Variables
+	--k-prism-border-radius: 4px;
+	--k-prism-button-padding: 0.5rem 1rem;
 	--k-prism-color-link: var(--k-prism-color-background-accent);
 	--k-prism-font-base-family: sans-serif;
-	--k-prism-font-base-size: 12pt;
+	--k-prism-font-base-size: 16px;
 	--k-prism-font-base-weight: 500;
 	--k-prism-font-title-family: sans-serif;
 	--k-prism-font-title-weight: 700;
@@ -63,6 +65,8 @@ html.disable-dark-mode:not(.disable-light-mode) {
 }
 
 html {
+	font-size: var(--k-prism-font-base-size);
+
 	body {
 		font-size: var(--k-prism-font-base-size);
 		font-family: var(--k-prism-font-base-family);
@@ -99,6 +103,25 @@ nav {
 form {
 	label {
 		display: block;
+	}
+}
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+button {
+	background-color: var(--k-prism-color-background-accent);
+	border-radius: var(--k-prism-border-radius);
+	border: none;
+	color: var(--k-prism-color-foreground-accent);
+	font-family: var(--k-prism-font-title-family);
+	// font-weight: var(--k-prism-font-title-weight);
+	font-size: 1rem;
+	padding: var(--k-prism-button-padding);
+
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
 	}
 }
 
