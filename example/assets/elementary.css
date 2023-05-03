@@ -1,5 +1,5 @@
 :root {
-	--k-prism-dark-color-accent: magenta;
-	--k-prism-light-color-accent: purple;
+	--k-prism-dark-color-background-accent: magenta;
+	--k-prism-light-color-background-accent: purple;
 	--k-prism-font-base-family: serif;
 }
