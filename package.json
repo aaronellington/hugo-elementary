@@ -15,7 +15,7 @@
 		"watch": "parcel watch --no-hmr --no-cache"
 	},
 	"dependencies": {
-		"@kyberbits/prism": "^2.0.1"
+		"@kyberbits/prism": "^2.0.2"
 	},
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.8.3",
