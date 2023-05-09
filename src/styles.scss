@@ -118,6 +118,7 @@ ul.pagination {
 	.elementary-container {
 		min-height: 50vh;
 		display: flex;
+		align-content: flex-start;
 		flex-wrap: wrap;
 		gap: 1rem;
 
