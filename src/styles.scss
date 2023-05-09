@@ -175,40 +175,18 @@ ul.pagination {
 }
 
 #elementary-docs-menu {
-	border: 1px solid var(--k-prism-color-foreground-secondary);
-
-	& > ul {
-		& > li {
-			&:not(:first-child) {
-				border-top: 1px solid var(--k-prism-color-foreground-secondary);
-			}
-		}
-	}
-
+	border-right: 1px solid var(--k-prism-color-foreground-secondary);
+	border-top: 1px solid var(--k-prism-color-foreground-secondary);
 	ul {
-		&:not(:first-child) {
-			margin-left: 1rem;
+		ul {
+			margin-left: 1.5rem;
+			list-style: circle;
 		}
 
 		li {
 			a {
-				border-bottom: 1px solid var(--k-prism-color-foreground-secondary);
 				display: block;
-				padding: 1rem;
-			}
-		}
-
-		ul {
-			li {
-				&:last-child {
-					a {
-						border-bottom: none;
-					}
-				}
-			}
-
-			a {
-				border-left: 1px solid var(--k-prism-color-foreground-secondary);
+				padding: 0.5rem 0;
 			}
 		}
 	}
