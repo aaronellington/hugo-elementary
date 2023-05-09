@@ -138,6 +138,7 @@ ul.pagination {
 		min-height: 50vh;
 		display: flex;
 		align-content: flex-start;
+		align-items: flex-start;
 		flex-wrap: wrap;
 		gap: 1rem;
 
@@ -151,10 +152,7 @@ ul.pagination {
 
 		#elementary-article {
 			flex-grow: 1;
-
-			#elementary-list {
-				margin-top: 1rem;
-			}
+			flex-basis: min-content;
 		}
 	}
 }
