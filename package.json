@@ -15,7 +15,7 @@
 		"watch": "parcel watch --no-hmr --no-cache"
 	},
 	"dependencies": {
-		"@kyberbits/prism": "^2.0.9",
+		"@kyberbits/prism": "^2.0.10",
 		"@kyberbits/pylon": "^0.0.8"
 	},
 	"devDependencies": {
