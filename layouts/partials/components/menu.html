@@ -22,9 +22,7 @@
 						{{- printf " %s=%q" $k $v | safeHTMLAttr }}
 					{{- end }}
 				{{- end -}}
-			>
-				{{ or (T .Identifier) .Name | safeHTML }}
-			</a>
+			>{{ or (T .Identifier) .Name | safeHTML }}</a>
 			{{- with .Children }}
 				<ul>
 					{{- partial "inline/menu-walk.html" (dict "page" $page "menuEntries" .) }}
