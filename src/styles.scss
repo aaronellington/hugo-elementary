@@ -1,5 +1,6 @@
 @import url('../node_modules/@kyberbits/prism/prism.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 #elementary-page {
 	display: flex;
 	flex-direction: column;
@@ -141,18 +142,15 @@
 }
 
 // Flag External Links
-#elementary-header,
-article {
-	a[href*="//"]:not([href*="localhost"]):not(table a)
-	{
-		&::after {
-			content: '\f08e';
-			font-family: 'Font Awesome 6 Free';
-			font-weight: 900;
-			padding-left: 0.25rem;
-			vertical-align: middle;
-			font-size: 0.75rem;
-		}
+a[href*="//"]:not([href*="localhost"])
+{
+	&::after {
+		content: '\f08e';
+		font-family: 'Font Awesome 6 Free';
+		font-weight: 900;
+		padding-left: 0.25rem;
+		vertical-align: middle;
+		font-size: 0.75rem;
 	}
 }
 
