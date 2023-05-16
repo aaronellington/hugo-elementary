@@ -1,7 +1,42 @@
-<div id="elementary-body">
-	<div class="elementary-container">
-		{{- partial "components/breadcrumbs.html" . -}}
-		{{- partial "components/docs.html" . -}}
-		{{- partial "components/article.html" . -}}
-	</div>
-</div>
+{{- define "partials/inline/taxonomy-walk.html" }}
+	{{ $page := .page }}
+
+	{{- range $page.Pages }}
+		{{ $subPage := . }}
+		<li>
+			<a href="{{ $subPage.Permalink}}">
+				{{ $subPage.Name }}
+			</a>
+			{{ if gt ($subPage.Pages | len) 0 }}
+				<ul>
+					{{- partial "inline/taxonomy-walk.html" (dict "page" $subPage ) }}
+				</ul>
+			{{ end }}
+		</li>
+	{{- end }}
+{{- end }}
+
+{{ $docsPage := false}}
+{{- range (union (slice .) (.Ancestors)).Reverse }}
+	{{ if eq .Params.documentation true }}
+		{{ $docsPage = . }}
+	{{- end }}
+{{- end }}
+
+{{ if $docsPage }}
+	<aside>
+		<nav id="elementary-docs-menu">
+			<ul>
+				{{- partial "inline/taxonomy-walk.html" (dict "page" $docsPage ) }}
+			</ul>
+		</nav>
+	</aside>
+{{ end }}
+
+<article>
+	<h1>{{ .Title }}</h1>
+	{{- .Content -}}
+	{{- partial "components/list.html" . -}}
+
+
+</article>

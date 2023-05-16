@@ -1,12 +1,8 @@
-<div id="elementary-footer">
-	<div class="elementary-container">
-		{{ if .Site.Params.disclaimer }}
-			<p id="elementary-disclaimer">
-				{{ .Site.Params.disclaimer }}
-			</p>
-		{{ end }}
-		<p id="elementary-copyright">
-			{{ .Site.Title }} ©
-		</p>
-	</div>
-</div>
+{{ if .Site.Params.disclaimer }}
+	<p id="elementary-disclaimer">
+		{{ .Site.Params.disclaimer }}
+	</p>
+{{ end }}
+<p id="elementary-copyright">
+	{{ .Site.Title }} ©
+</p>

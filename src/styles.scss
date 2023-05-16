@@ -1,5 +1,146 @@
 @import url('../node_modules/@kyberbits/prism/prism.css');
 
+#elementary-page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	.elementary-container {
+		width: 920px;
+		max-width: 100%;
+		margin: auto;
+		padding: 1rem;
+	}
+
+	#elementary-header {
+		background: var(--k-prism-color-background-accent);
+		background-size: contain;
+
+		.elementary-container {
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+
+			#elementary-banner-image {
+				img {
+					height: 4rem;
+					width: 4rem;
+					display: block;
+				}
+			}
+
+			#elementary-banner-text {
+				display: flex;
+				gap: 1rem;
+				flex-direction: column;
+				#elementary-banner-title {
+					font-weight: var(--k-prism-font-title-weight);
+					font-size: 2rem;
+					font-family: var(--k-prism-font-title-family);
+					a {
+						color: var(--k-prism-color-foreground-accent);
+					}
+				}
+
+				nav {
+					margin-left: var(--image-height);
+
+					ul {
+						display: flex;
+
+						gap: 1rem;
+						li {
+							display: inline-block;
+							a {
+								color: var(--k-prism-color-foreground-accent);
+
+								display: block;
+								font-weight: bold;
+								&:hover {
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#elementary-body {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		.elementary-container {
+			background: var(--k-prism-color-background-secondary);
+			display: flex;
+			border-left: 1px solid var(--k-prism-color-foreground-secondary);
+			border-right: 1px solid var(--k-prism-color-foreground-secondary);
+			flex-grow: 1;
+			flex-direction: column;
+			gap: 1rem;
+
+			@media (max-width: 920px) {
+				& {
+					border: none;
+				}
+			}
+
+			#elementary-article {
+				display: flex;
+				gap: 1rem;
+				align-items: flex-start;
+				aside {
+					border-top: 1px solid var(--k-prism-color-foreground-secondary);
+					border-right: 1px solid var(--k-prism-color-foreground-secondary);
+					width: 256px;
+					padding: 1rem;
+					padding-left: 0;
+					flex-shrink: 0;
+
+					ul {
+						ul {
+							margin-left: 1.5rem;
+							list-style: circle;
+						}
+
+						li {
+							a {
+								display: block;
+								padding: 0.5rem 0;
+							}
+						}
+					}
+				}
+
+				article {
+					flex-grow: 1;
+					overflow-x: hidden;
+				}
+			}
+		}
+	}
+
+	#elementary-footer {
+		text-align: center;
+		border-top: 1px solid var(--k-prism-color-foreground-secondary);
+		.elementary-container {
+			padding: 2rem;
+			p {
+				opacity: 0.75;
+				font-size: 0.75rem;
+
+				&:not(:last-child) {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+}
+
+// Flag External Links
 #elementary-menu,
 article {
 	a[href*="//"]:not([href*="localhost"]):not(table a)
@@ -15,37 +156,28 @@ article {
 	}
 }
 
-.elementary-container {
-	max-width: 920px;
-	margin: auto;
-	padding: 1rem;
-	background-color: var(--k-prism-color-background-secondary);
-	border: 1px solid var(--k-prism-color-foreground-secondary);
-	@media (max-width: 920px) {
-		& {
-			border: none;
-		}
-	}
-}
-
+// Breadcrumbs
 #elementary-breadcrumbs {
 	ul {
-		&:after {
-			content: '';
-			clear: both;
-			display: block;
-		}
-		li {
-			float: left;
-
-			&:not(:last-child):after {
-				content: '→';
-				padding: 0rem 0.5rem;
-			}
+		height: 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	&:after {
+		content: '';
+		clear: both;
+		display: block;
+	}
+	li {
+		&:not(:last-child):after {
+			content: '→';
+			padding: 0rem 0.5rem;
 		}
 	}
 }
 
+// Pagination
 ul.pagination {
 	display: flex;
 	margin-top: 1rem;
@@ -77,105 +209,7 @@ ul.pagination {
 	}
 }
 
-#elementary-header {
-	--image-height: 5rem;
-	--banner-height: 5rem;
-	margin-bottom: 1rem;
-	.elementary-container {
-		background-color: transparent;
-		border: none;
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-
-	height: calc(var(--banner-height) + calc(var(--image-height) / 2));
-	#elementary-banner {
-		background: url('/banner-tile.png'), var(--k-prism-color-background-accent);
-		background-size: contain;
-		height: var(--banner-height);
-
-		#elementary-banner-title {
-			margin-left: calc(var(--image-height) + 1rem);
-			line-height: var(--banner-height);
-			font-weight: var(--k-prism-font-title-weight);
-			font-size: 2rem;
-			font-family: var(--k-prism-font-title-family);
-			a {
-				color: var(--k-prism-color-foreground-accent);
-			}
-		}
-
-		#elementary-banner-image {
-			overflow: hidden;
-			position: absolute;
-			top: calc(var(--banner-height) - calc(var(--image-height) / 2));
-			border-radius: 100%;
-			border: 0.5rem solid var(--k-prism-color-background-primary);
-			background: var(--k-prism-color-background-primary);
-			height: var(--image-height);
-			width: var(--image-height);
-			img {
-				height: 100%;
-				width: 100%;
-			}
-		}
-	}
-
-	#elementary-menu {
-		nav {
-			margin-left: var(--image-height);
-
-			ul {
-				&:after {
-					clear: both;
-					content: '';
-					display: block;
-				}
-
-				li {
-					display: inline-block;
-					a {
-						display: block;
-						font-weight: bold;
-						padding: 0.5rem 1rem;
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-#elementary-body {
-	.elementary-container {
-		min-height: 50vh;
-		display: flex;
-		align-content: flex-start;
-		align-items: flex-start;
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 1rem;
-		justify-content: stretch;
-
-		#elementary-breadcrumbs {
-			flex: 1 0 100%;
-		}
-
-		#elementary-docs-menu {
-			flex: 0 0 256px;
-		}
-
-		#elementary-article {
-			flex-grow: 1;
-			flex-basis: min-content;
-		}
-	}
-}
-
 #elementary-list {
-	margin-top: 1rem;
 	.elementary-list-item {
 		&:not(:last-child) {
 			margin-bottom: 1rem;
@@ -187,44 +221,6 @@ ul.pagination {
 
 		a {
 			font-family: var(--k-prism-font-title-family);
-		}
-	}
-}
-
-#elementary-docs-menu {
-	border-right: 1px solid var(--k-prism-color-foreground-secondary);
-	border-top: 1px solid var(--k-prism-color-foreground-secondary);
-	padding-right: 1rem;
-
-	ul {
-		ul {
-			margin-left: 1.5rem;
-			list-style: circle;
-		}
-
-		li {
-			a {
-				display: block;
-				padding: 0.5rem 0;
-			}
-		}
-	}
-}
-
-#elementary-footer {
-	margin-bottom: 1rem;
-	.elementary-container {
-		text-align: center;
-		border-top: none;
-		border-bottom: 1px solid var(--k-prism-color-foreground-secondary);
-
-		p {
-			opacity: 0.75;
-			font-size: 0.75rem;
-
-			&:not(:last-child) {
-				margin-bottom: 1rem;
-			}
 		}
 	}
 }

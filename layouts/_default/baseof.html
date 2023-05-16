@@ -14,8 +14,28 @@
 <html lang="{{ site.LanguageCode }}" class="{{ $htmlClassList}}">
 	{{- partial "head.html" . -}}
 	<body>
-		{{- partial "header.html" . -}}
-		{{- block "main" . }}{{- end }}
-		{{- partial "footer.html" . -}}
+		<div id="elementary-page">
+			<div id="elementary-header">
+				<div class="elementary-container">
+					{{- partial "header.html" . -}}
+				</div>
+			</div>
+			<div id="elementary-body">
+				<div class="elementary-container">
+
+					<div id="elementary-breadcrumbs">
+						{{- partial "components/breadcrumbs.html" . -}}
+					</div>
+					<div id="elementary-article">
+						{{- block "main" . }}{{- end }}
+					</div>
+				</div>
+			</div>
+			<div id="elementary-footer">
+				<div class="elementary-container">
+					{{- partial "footer.html" . -}}
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
