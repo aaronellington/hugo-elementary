@@ -91,8 +91,10 @@
 
 			#elementary-article {
 				display: flex;
+				flex-grow: 1;
 				gap: 1rem;
-				align-items: flex-start;
+				align-items: justify;
+
 				aside {
 					border-top: 1px solid var(--k-prism-color-foreground-secondary);
 					border-right: 1px solid var(--k-prism-color-foreground-secondary);
