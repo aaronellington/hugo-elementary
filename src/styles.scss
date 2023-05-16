@@ -154,8 +154,10 @@ ul.pagination {
 		display: flex;
 		align-content: flex-start;
 		align-items: flex-start;
+		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 1rem;
+		justify-content: stretch;
 
 		#elementary-breadcrumbs {
 			flex: 1 0 100%;
