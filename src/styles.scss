@@ -153,6 +153,16 @@ a[href*="//"]:not([href*="localhost"])
 		font-size: 0.75rem;
 	}
 }
+a[href*='mailto:'] {
+	&::after {
+		content: '\f0e0';
+		font-family: 'Font Awesome 6 Free';
+		font-weight: 500;
+		padding-left: 0.25rem;
+		vertical-align: middle;
+		font-size: 0.75rem;
+	}
+}
 
 // Breadcrumbs
 #elementary-breadcrumbs {
