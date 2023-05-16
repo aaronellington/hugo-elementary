@@ -16,12 +16,12 @@ article {
 }
 
 .elementary-container {
-	max-width: 768px;
+	max-width: 920px;
 	margin: auto;
 	padding: 1rem;
 	background-color: var(--k-prism-color-background-secondary);
 	border: 1px solid var(--k-prism-color-foreground-secondary);
-	@media (max-width: 768px) {
+	@media (max-width: 920px) {
 		& {
 			border: none;
 		}
