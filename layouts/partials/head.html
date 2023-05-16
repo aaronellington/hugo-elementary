@@ -2,21 +2,21 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1">
 
 <title>{{ .Site.Title }}</title>
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .RelPermalink }}">
 <meta name="description" content="{{ .Summary }}">
 
 {{ $appleTouchIcon := resources.Get "./apple-touch-icon.png" }}
 {{ $appleTouchIconFingerprinted := $appleTouchIcon | resources.Fingerprint }}
-<link rel="apple-touch-icon" href="{{ $appleTouchIconFingerprinted.Permalink }}">
+<link rel="apple-touch-icon" href="{{ $appleTouchIconFingerprinted.RelPermalink }}">
 
 {{ $style := resources.Get "./_elementary.css" }}
 {{ $styleFingerprinted := $style | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $styleFingerprinted.Permalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $styleFingerprinted.RelPermalink }}" integrity="{{ $styleFingerprinted.Data.Integrity }}">
 
 {{ $customStyle := resources.Get "./elementary.css" }}
 {{ if ne $customStyle nil }}
 	{{ $customStyleFingerprinted := $customStyle | resources.Fingerprint }}
-	<link rel="stylesheet" href="{{ $customStyleFingerprinted.Permalink }}" integrity="{{ $customStyleFingerprinted.Data.Integrity }}">
+	<link rel="stylesheet" href="{{ $customStyleFingerprinted.RelPermalink }}" integrity="{{ $customStyleFingerprinted.Data.Integrity }}">
 {{ end }}
 
 {{ $script := resources.Get "./_elementary.js" }}
@@ -25,4 +25,4 @@
 	{{ $script = slice $script $customScript | resources.Concat "_elementary.js" }}
 {{ end }}
 {{ $scriptFingerprinted := $script | resources.Fingerprint }}
-<script src="{{ $scriptFingerprinted.Permalink }}" integrity="{{ $scriptFingerprinted.Data.Integrity }}"></script>
+<script src="{{ $scriptFingerprinted.RelPermalink }}" integrity="{{ $scriptFingerprinted.Data.Integrity }}"></script>

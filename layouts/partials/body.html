@@ -4,7 +4,7 @@
 	{{- range $page.Pages }}
 		{{ $subPage := . }}
 		<li>
-			<a href="{{ $subPage.Permalink}}">
+			<a href="{{ $subPage.RelPermalink}}">
 				{{ $subPage.Name }}
 			</a>
 			{{ if gt ($subPage.Pages | len) 0 }}

@@ -142,7 +142,7 @@
 }
 
 // Flag External Links
-a[href*="//"]:not([href*="localhost"])
+a[href*="//"]
 {
 	&::after {
 		content: '\f08e';

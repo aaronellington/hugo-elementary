@@ -3,7 +3,7 @@
 	<div id="elementary-list">
 		{{ range $paginator.Pages }}
 			<div class="elementary-list-item">
-				<a href="{{ .Permalink }}">
+				<a href="{{ .RelPermalink }}">
 					{{ .Title }}
 				</a>
 				<p>{{ .Summary }}</p>

@@ -1,13 +1,13 @@
 {{ $brandingImage := resources.Get "./branding.png" }}
 {{ $brandingImageFingerprinted := $brandingImage | resources.Fingerprint }}
 
-<a id="elementary-banner-image" href="{{ .Site.Home.Permalink }}">
-	<img src="{{ $brandingImageFingerprinted.Permalink }}" title="{{ .Site.Title }}">
+<a id="elementary-banner-image" href="{{ .Site.Home.RelPermalink }}">
+	<img src="{{ $brandingImageFingerprinted.RelPermalink }}" title="{{ .Site.Title }}">
 </a>
 
 <div id="elementary-banner-text">
 	<h1 id="elementary-banner-title">
-		<a  href="{{ .Site.Home.Permalink }}">
+		<a href="{{ .Site.Home.RelPermalink }}">
 			{{ .Site.Title }}
 		</a>
 	</h1>
