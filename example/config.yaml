@@ -6,3 +6,7 @@ disableKinds:
   - term
 params:
   disclaimer: foo
+menu:
+  main:
+    - name: test
+      url: https://example.com
