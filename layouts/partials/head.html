@@ -26,3 +26,5 @@
 {{ end }}
 {{ $scriptFingerprinted := $script | resources.Fingerprint }}
 <script src="{{ $scriptFingerprinted.RelPermalink }}" integrity="{{ $scriptFingerprinted.Data.Integrity }}"></script>
+
+{{ template "_internal/google_analytics.html" . }}
