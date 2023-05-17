@@ -8,5 +8,5 @@ params:
   disclaimer: foo
 menu:
   main:
-    - name: test
+    - name: Multi Word Link
       url: https://example.com

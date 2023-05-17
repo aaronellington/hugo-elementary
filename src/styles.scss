@@ -50,6 +50,7 @@
 
 					ul {
 						display: flex;
+						align-items: center;
 
 						gap: 1rem;
 						li {
@@ -93,7 +94,6 @@
 				display: flex;
 				flex-grow: 1;
 				gap: 1rem;
-				align-items: justify;
 
 				aside {
 					border-top: 1px solid var(--k-prism-color-foreground-secondary);
@@ -121,6 +121,19 @@
 				article {
 					flex-grow: 1;
 					overflow-x: hidden;
+				}
+
+				@media (max-width: 768px) {
+					& {
+						flex-direction: column;
+					}
+
+					aside {
+						width: auto;
+						border: none;
+						padding: 0.5rem 1rem;
+						border: 1px solid var(--k-prism-color-foreground-secondary);
+					}
 				}
 			}
 		}
