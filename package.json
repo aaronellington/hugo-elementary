@@ -1,4 +1,5 @@
 {
+	"name": "elementary",
 	"private": true,
 	"targets": {
 		"app": {
